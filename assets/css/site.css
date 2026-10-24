@@ -440,6 +440,11 @@ p {
   height: 28px;
   color: #5fe0c8;
 }
+.soon .soon-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+}
 .soon small {
   display: block;
   font-size: 0.72rem;
