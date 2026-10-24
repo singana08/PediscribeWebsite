@@ -1,6 +1,6 @@
-# Kidzoo website
+# Pediscribe website
 
-The public website for Kidzoo, a private health diary for parents. Plain HTML, CSS and a little JavaScript: no framework, no build step, no cookies, no analytics, no outside requests.
+The public website for Pediscribe, a private health diary for parents. Plain HTML, CSS and a little JavaScript: no framework, no build step, no cookies, no analytics, no outside requests.
 
 ## Pages
 
