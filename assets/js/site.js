@@ -68,9 +68,10 @@
 
   if (still) return;
 
-  // The hero phones lean towards the pointer.
+  // The hero phones lean towards the pointer. On a phone there is none: they lean as the phone is tilted, and
+  // until it is (or where the browser gives no tilt), they turn slowly on their own.
   var stage = document.querySelector(".stage");
-  if (stage && finePointer) {
+  if (stage) {
     var tx = 0,
       ty = 0,
       cx = 0,
@@ -83,15 +84,31 @@
       stage.style.setProperty("--rx", (-cy * 9).toFixed(2) + "deg");
       raf = Math.abs(tx - cx) + Math.abs(ty - cy) > 0.001 ? requestAnimationFrame(step) : 0;
     };
-    window.addEventListener(
-      "pointermove",
-      function (e) {
-        tx = e.clientX / window.innerWidth - 0.5;
-        ty = e.clientY / window.innerHeight - 0.5;
-        if (!raf) raf = requestAnimationFrame(step);
-      },
-      { passive: true }
-    );
+    var lean = function (x, y) {
+      tx = Math.max(-0.6, Math.min(0.6, x));
+      ty = Math.max(-0.6, Math.min(0.6, y));
+      if (!raf) raf = requestAnimationFrame(step);
+    };
+    if (finePointer) {
+      window.addEventListener(
+        "pointermove",
+        function (e) {
+          lean(e.clientX / window.innerWidth - 0.5, e.clientY / window.innerHeight - 0.5);
+        },
+        { passive: true }
+      );
+    } else {
+      stage.classList.add("sway");
+      window.addEventListener(
+        "deviceorientation",
+        function (e) {
+          if (e.gamma == null || e.beta == null) return;
+          stage.classList.remove("sway");
+          lean(e.gamma / 30, (e.beta - 50) / 45); // side to side, and forward and back from how a phone is usually held
+        },
+        { passive: true }
+      );
+    }
   }
 
   // Cards tilt a little under the pointer.

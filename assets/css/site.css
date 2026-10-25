@@ -554,6 +554,19 @@ p {
   transform: translateX(62%) translateZ(-70px) rotateY(-24deg) scale(0.86);
   filter: saturate(0.95) brightness(0.97);
 }
+/* On a phone, until it is tilted: a slow turn on their own (see site.js) */
+.stage.sway .phones {
+  animation: sway 9s ease-in-out infinite;
+}
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotateX(5deg) rotateY(-11deg);
+  }
+  50% {
+    transform: rotateX(-3deg) rotateY(11deg);
+  }
+}
 @keyframes bob {
   50% {
     transform: translateZ(70px) translateY(-12px);
@@ -651,12 +664,13 @@ p {
     width: 32px;
     height: 32px;
   }
+  /* In from the edges: their depth (translateZ) brings them forward and outward, past the screen edge otherwise */
   .f1 {
     top: 8%;
-    left: 0;
+    left: 9%;
   }
   .f2 {
-    right: 0;
+    right: 9%;
     top: 58%;
   }
   .f3 {
@@ -1755,7 +1769,8 @@ section {
 /* ---------- Coming into view ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(28px) rotateX(8deg);
+  /* With its own perspective, so it tips up in 3D rather than only squashing flat */
+  transform: perspective(900px) translateY(40px) rotateX(22deg);
   transform-origin: 50% 100%;
   transition: opacity 0.8s ease, transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
   transition-delay: var(--d, 0s);
@@ -1776,6 +1791,30 @@ section {
 .no-js .reveal {
   opacity: 1;
   transform: none;
+}
+
+/* On a phone (no pointer to tilt them), the cards lean like pages on a drum as they scroll past: back as they come
+   up from the bottom, flat in the middle, forward as they leave at the top. Browsers without scroll-linked
+   animation simply show them flat. */
+@supports (animation-timeline: view()) {
+  @media (hover: none) and (prefers-reduced-motion: no-preference) {
+    [data-tilt] {
+      animation: drum linear both;
+      animation-timeline: view();
+    }
+  }
+}
+@keyframes drum {
+  0% {
+    transform: perspective(900px) rotateX(24deg) scale(0.94);
+  }
+  45%,
+  55% {
+    transform: perspective(900px) rotateX(0deg) scale(1);
+  }
+  100% {
+    transform: perspective(900px) rotateX(-18deg) scale(0.96);
+  }
 }
 
 /* Less motion for people who ask for it: everything still shows, nothing moves on its own */
