@@ -1570,6 +1570,42 @@ section {
 }
 
 /* ---------- Final call and footer ---------- */
+/* ---------- The store badge, in the store's own black ---------- */
+.stores {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 26px 0 6px;
+}
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px 10px 16px;
+  border-radius: 14px;
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  text-align: left;
+  line-height: 1.15;
+}
+.store-badge .play {
+  width: 28px;
+  height: 30px;
+}
+.store-badge small {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.store-badge b {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
 .cta {
   text-align: center;
   padding: 72px 24px;

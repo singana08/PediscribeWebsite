@@ -13,7 +13,7 @@
   <link rel="icon" href="/assets/img/logo-32.png?v=3" sizes="32x32">
   <link rel="apple-touch-icon" href="/assets/img/logo-180.png?v=3">
   <link rel="preload" href="/assets/fonts/plus-jakarta-sans.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/site.css?v=3">
+  <link rel="stylesheet" href="/assets/css/site.css?v=4">
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/site.js?v=3" defer></script>
 </head>
@@ -27,7 +27,7 @@
         <a class="brand" href="/" aria-label="Pediscribe home"><img src="/assets/img/logo-192.png?v=3" alt="" width="36" height="36">Pediscribe</a>
         <nav class="nav-links" aria-label="Main">
           <a href="/#features">Features</a>
-          <a href="/#privacy">Privacy</a>
+          <a href="/privacy">Privacy</a>
           <a href="/help">Help</a>
           <a href="/reminders">Reminders</a>
         </nav>
@@ -36,7 +36,7 @@
             <svg class="icon icon-sun" aria-hidden="true"><use href="/assets/icons.svg#light_mode"/></svg>
             <svg class="icon icon-moon" aria-hidden="true"><use href="/assets/icons.svg#dark_mode"/></svg>
           </button>
-          <a class="btn btn-primary btn-sm nav-cta" href="/#start">Get Pediscribe</a>
+          <a class="btn btn-primary btn-sm nav-cta" href="/#get">Get Pediscribe</a>
           <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-expanded="false"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#menu"/></svg></button>
         </div>
       </div>
@@ -398,12 +398,15 @@
       </div>
     </section>
 
-    <!-- Last word -->
-    <section class="wrap">
+    <!-- Where to get it: the store badge (Google Play links here once Pediscribe is live) -->
+    <section class="wrap" id="get">
       <div class="cta reveal">
         <span class="eyebrow"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#phone_android"/></svg>Coming soon</span>
         <h2>Coming soon to <span class="grad-text">Google Play</span></h2>
         <p class="lead">Pediscribe is in its final round of testing. Have a question or an idea? We would love to hear from you.</p>
+        <div class="stores" aria-label="Where to get Pediscribe">
+          <span class="store-badge" role="note"><svg class="play" viewBox="0 0 24 26" aria-hidden="true"><path fill="#00c3ff" d="M2 1 2 25 14 13Z"/><path fill="#00e676" d="M2 1 14 13 17.5 10.3Z"/><path fill="#ff3d57" d="M2 25 14 13 17.5 15.7Z"/><path fill="#ffd500" d="M17.5 10.3 14 13 17.5 15.7 22 13Z"/></svg><span><small>Coming soon on</small><b>Google Play</b></span></span>
+        </div>
         <div class="hero-actions center">
           <a class="btn btn-primary" href="mailto:primarydeveloper.apps@gmail.com?subject=Question%20about%20Pediscribe"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg>Write to us</a>
           <a class="btn btn-ghost" href="/privacy">Read the privacy policy</a>
@@ -425,7 +428,7 @@
           <ul>
             <li><a href="/#features">Features</a></li>
             <li><a href="/#tablets">Phones and tablets</a></li>
-            <li><a href="/#privacy">Privacy</a></li>
+            <li><a href="/#privacy">Private by design</a></li>
             <li><a href="/help">Help and questions</a></li>
           </ul>
         </div>
