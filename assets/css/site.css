@@ -340,6 +340,10 @@ p {
 .menu-btn {
   display: none;
 }
+/* In the phone menu only: on a phone the Get Pediscribe button in the bar is hidden. */
+.nav-links .menu-only {
+  display: none;
+}
 @media (max-width: 860px) {
   .menu-btn {
     display: inline-grid;
@@ -364,6 +368,11 @@ p {
   }
   .nav-links a {
     padding: 12px 14px;
+  }
+  .nav-links .menu-only {
+    display: block;
+    color: var(--link);
+    font-weight: 700;
   }
   .nav .nav-cta {
     display: none;
