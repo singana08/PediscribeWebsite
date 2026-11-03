@@ -1566,6 +1566,10 @@ section {
   width: 28px;
   height: 30px;
 }
+.store-badge .apple {
+  width: 26px;
+  height: 28px;
+}
 .store-badge small {
   display: block;
   font-size: 0.72rem;
