@@ -73,7 +73,7 @@
             <li>Your child: name, date of birth, gender, blood group, allergies.</li>
             <li>Health records: illnesses, temperatures, medicines and doses, doctor visits, vaccines, growth, check-ups, test results, hospital stays, conditions, food, sleep, screen time and notes.</li>
             <li>Optional details: how your child was born, your name, relation and phone, the parents' heights (for the expected adult height), the doctor's name, clinic and phone, and family health history.</li>
-            <li>Photos and documents you add, including your child's profile picture: prescriptions, reports, scans. Each file is encrypted on its own (AES-256), with its key in the phone's secure keystore.</li>
+            <li>Photos, sounds and documents you add, including your child's profile picture: prescriptions, reports, scans, and a first word or a laugh kept with a first. Each file is encrypted on its own (AES-256), with its key in the phone's secure keystore.</li>
             <li>Your own reminders, if you make any: what each is for ("Music class"), when, and for which child.</li>
             <li>Your settings: reminders, app lock, privacy choices, and when you agreed to this notice.</li>
             <li>Notes about the app itself, kept on this phone: how many times each screen was opened, and short technical notes about recent errors (where in the app's code they happened, never what you typed).</li>
@@ -82,7 +82,7 @@
         <article class="doc-card reveal">
           <h2><span class="tile c-rose"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#block"/></svg></span>What we never collect</h2>
           <p>Pediscribe has no internet permission, so it cannot send anything anywhere. There is no account and no sign-in.</p>
-          <p>It does not use your location, contacts, camera, microphone, call log, messages or your phone's files, and it does not ask for those permissions.</p>
+          <p>It does not use your location, contacts, camera, call log, messages or your phone's files, and it does not ask for those permissions. The microphone is used only while you record a sound for a first, and the recording stays on this phone.</p>
           <p>There are no ads, no analytics and no tracking, and nothing is reported from inside the app on its own.</p>
           <p>The makers of Pediscribe never receive your child's information, so we cannot see it, sell it or share it.</p>
         </article>
@@ -90,7 +90,7 @@
           <h2><span class="tile c-green"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#enhanced_encryption"/></svg></span>Where your information is stored, and how it is protected</h2>
           <p>Everything stays on this phone, in an encrypted database (AES-256, using SQLCipher). The key to it is stored in the phone's secure keystore, never next to the data.</p>
           <p>App lock asks for your fingerprint, face or phone PIN. That check is done by Android: Pediscribe never sees your fingerprint or face.</p>
-          <p>Hide details in reminders (on by default) makes reminders say only "Pediscribe reminder", with no name or medicine. Hide from screenshots keeps the app out of the recent-apps preview and blocks screenshots.</p>
+          <p>Hide details in reminders (on by default) makes reminders that name your child or a medicine say only "Pediscribe reminder". Hide from screenshots keeps the app out of the recent-apps preview and blocks screenshots.</p>
           <p>Android's automatic cloud backup is switched off for Pediscribe, so the phone does not copy the records to your Google account by itself.</p>
         </article>
         <article class="doc-card reveal">
@@ -114,6 +114,7 @@
             <li>Run at start-up: to put the reminders back after the phone restarts.</li>
             <li>Alarms and reminders: so a reminder comes at the time you set, not up to an hour later. Medicine doses and your own reminders are set like an alarm, so your phone may show an alarm icon at the top.</li>
             <li>Vibration: so a reminder can buzz.</li>
+            <li>Microphone: only to record a sound for a first, when you tap Record. Android asks you the first time.</li>
           </ul>
           <p>Nothing else. Photos are taken with your phone's own camera app. Files are chosen one at a time through Android's own file picker, and a backup folder through Android's own folder screen, with your permission for that folder only. So Pediscribe needs no camera or storage permission.</p>
         </article>
@@ -163,7 +164,7 @@
           <h2><span class="tile c-brand"><svg class="icon" aria-hidden="true"><use href="/assets/icons.svg#mail"/></svg></span>Contact</h2>
           <p>Questions about privacy: use Profile and settings → Write to us in the app, or write to <a href="mailto:primarydeveloper.apps@gmail.com?subject=Privacy%20question%20about%20Pediscribe">primarydeveloper.apps@gmail.com</a>.</p>
         </article>
-        <p class="version-line">Version 10 · last updated 25 October 2026</p>
+        <p class="version-line">Version 11 · last updated 4 November 2026</p>
       </div>
     </section>
   </main>
