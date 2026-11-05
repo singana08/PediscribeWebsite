@@ -279,6 +279,7 @@ p {
   letter-spacing: -0.02em;
   color: var(--ink);
   text-decoration: none;
+  min-height: 40px; /* easy to tap */
 }
 .brand:hover {
   color: var(--ink);
@@ -963,7 +964,7 @@ section {
   display: flex;
   gap: 18px;
   margin-top: 8px;
-  color: var(--primary);
+  color: var(--link); /* readable on the card in light and dark */
   font-weight: 800;
   font-size: 0.85rem;
 }
@@ -1572,7 +1573,7 @@ section {
 }
 .store-badge small {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   opacity: 0.85;
@@ -1636,7 +1637,21 @@ section {
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 10px;
+  gap: 0;
+}
+/* Links that stand on their own line are at least 40px tall, easy to tap on a phone. Links inside a sentence stay as
+   they are. The footer's by padding, so one that wraps to two lines stays apart from the next. */
+.footer ul a,
+.footer .tagline + a {
+  display: inline-block;
+  padding-block: 9px;
+}
+.more-link a,
+.band .reveal > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
 }
 .footer ul a {
   color: var(--ink);
